@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HiLit Sample</title>
+		<style type="text/css">
+		body {
+			margin: 40px auto;
+			max-width: 650px;
+			line-height: 1.6;
+			font-size: 18px;
+			color: #444;
+			padding: 0 10px;
+		}
+
+		h1, h2, h3 {
+			line-height: 1.2;
+		}
+
+			h1 a, h2 a, h3 a {
+				text-decoration: none;
+			}
+
+				h1 a:hover, h2 a:hover, h3 a:hover {
+					text-decoration: underline;
+				}
+
+		a, a:visited, a:hover {
+			color: inherit;
+		}
+	</style>
+		<link rel="stylesheet" href="hilit.css">
+	</head>
+<body>
+<h1>Sample usage</h1>
+<p>All you need is opening a code element, and writing some code in it. If your heart desire some syntax highlighting, 
+	then add <kbd style="background-color:#eee;">data-syntax</kbd> attribute with it. After everything loaded, 
+	initialize a HiLit object.<pre>var highLighted = new HiLit("some selector");</pre>Then voilà</p>
+<code data-syntax="csharp">
+using System;
+using System.Collections.Generic;
+
+namespace Sample.Models
+{
+	public class Article
+	{
+		public string Title { get; set; }
+
+		public string Summary { get; set; }
+
+		public string Body { get; set; }
+
+		public string Link { get; set; }
+
+		public virtual ICollection<Tag> TaggedKeywords { get; set; }
+
+		public DateTime? PublishDate { get; set; }
+
+		public ArticleState State { get; set; }
+
+		public string Language { get; set; }
+	}
+}
+</code>
+<script type="text/javascript" src="hilit.js"></script>
+<script type="text/javascript" src="hilit.syntax.csharp.js"></script>
+<script type="text/javascript">
+var code = new HiLit("code");
+</script>
+</body>
+</html>
