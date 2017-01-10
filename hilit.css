@@ -5,3 +5,8 @@ code.hilit{
 	padding:1em;
 	font-size:0.8em;
 }
+
+code.hilit span.line-number{
+	color:#999;
+	margin-left:-1.5em;
+}
