@@ -43,7 +43,9 @@
 	}
 
 	function replaceLineBreaks(content) {
-		return content.replace(/(?:\r\n|\r|\n)/g, "<br />");
+		var lineNumber = 1;
+		var lines = '<span class="line-number">1</span> ' + content;
+		return lines.replace(/(?:\r\n|\r|\n)/g, function(match){lineNumber++; return "<br />" + '<span class="line-number">'+lineNumber+'</span>';});
 	}
 
 	function replaceTabs(content) {
